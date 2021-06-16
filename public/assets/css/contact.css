@@ -1,0 +1,43 @@
+body {
+  color: white;
+}
+.div_contact {
+  border: 2px solid #18fd99;
+  border-radius: 16px;
+  width: 80%;
+  margin: 10% auto;
+  padding: 60px 30PX;
+}
+.div_contact_titre {
+  margin-bottom: 30px;
+  font-weight: 900;
+  font-size: 40px;
+  letter-spacing: 4px;
+}
+.contact_box {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  letter-spacing: 2px;
+}
+.contact_child {
+  width: 33%;
+}
+
+.contact_titre {
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.contact_text {
+    color: white;
+  font-weight: 300;
+  font-size: 25px;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+.contact_logo_img {
+  width: 55px;
+  margin-right: 10px;
+}

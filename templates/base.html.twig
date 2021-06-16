@@ -1,0 +1,40 @@
+{% set route_name = app.request.attributes.get('_route') %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="{{asset("assets/img/favicon.png")}}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+		<link href="{{asset("assets/css/base.css")}}" rel="stylesheet">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+		{% block stylesheets %}
+			{#{{ encore_entry_link_tags('app') }}#}
+		{% endblock %}
+		
+		
+		{% block javascripts %}
+			{#{{ encore_entry_script_tags('app') }}#}
+		{% endblock %}
+	</head>
+	<body>
+		{# HEADER #}
+		<div id='topnav' class="topnav">
+			<div class="logo_div">
+				<a class="active" href="/"><img class="logo_img" src="{{asset("/assets/img/logocolor.png")}}"></a>
+			</div>
+			<div class="link_div">
+				<a class="{% if route_name == "accueil" %} active{% endif %}" href="/">PROJET</a>
+				<a class="{% if route_name == "a-propos" %} active{% endif %}" href="/a-propos">A PROPOS</a>
+				<a class="{% if route_name == "contact" %} active{% endif %}" href="/contact">CONTACT</a>
+			</div>
+		</div>
+		{# END HEADER #}
+		{% block body %}{% endblock %}
+		{# FOOTER #}
+	</body>
+</html>

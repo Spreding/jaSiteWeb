@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{asset("assets/css/accueil.css")}}" rel="stylesheet">
+{% endblock %}
+{% block javascripts %}
+	<script src="{{asset("assets/js/accueil.js")}}"></script>
+{% endblock %}
+{% block body %}
+	<div id="container_filter" class="container_filter">
+		<button id="btn" class="btn all" onclick="filterSelection('all')">Tout</button>
+		<button id="btns" class="btn 3D Design" onclick="filterSelection('3D Design')">3D Design</button>
+		<button id="btn" class="btn Motion Design" onclick="filterSelection('Motion Design')">Motion</button>
+	</div>
+	<div id='container_content'class="container">
+		{% for _projet in projets %}
+			<div id="size{{_projet.sizeGrid}}" class="item_projet {{_projet.types}}" onclick="OpenProjet({{_projet.id}})">
+				<img class="item_img" src="{{_projet.Image_Preview}}">
+				<div class="item_info">
+					<p class="item_titre">{{_projet.name}}</p>
+					<p class="item_type">{{_projet.types}}</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<div id="page_projet" class="page_projet page_projet_slider page_projet_container" style="min-height: 939px">
+		<div class="close_projet">
+			<img src="{{asset("assets/img/croix.png")}}" alt="" onclick="CloseProject()">
+		</div>
+		<div id="container_projet"></div>
+	</div>
+
+{% endblock %}

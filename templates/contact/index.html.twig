@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact
+{% endblock %}
+{% block stylesheets %}
+	<link href="{{asset("assets/css/contact.css")}}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	<div class="div_contact">
+		<p class="div_contact_titre">COMMENCONS UN NOUVEAU PROJET ?</p>
+		<div class="contact_box">
+			<div class="contact_child">
+				<p class="contact_titre">Me rendre visite</p>
+				<p class="contact_text">Nantes 44400</p>
+			</div>
+			<div class="contact_child">
+				<p class="contact_titre">Me contacter</p>
+				<p class="contact_text">0648491370</p>
+				<a href="mailto: julieamelin@hotmail.fr" class="contact_text">julieamelin@hotmail.fr</a>
+			</div>
+			<div class="contact_child">
+				<p class="contact_titre">Suivez moi</p>
+				<a href="https://www.instagram.com/ju0am" target="_blank"><img class="contact_logo_img" src="{{asset("assets/img/logo_insta.png")}}"></a>
+				<a href="https://www.behance.net/julieamelie2ae" target="_blank"><img  class="contact_logo_img" src="{{asset("assets/img/logo_behance.png")}}"></a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

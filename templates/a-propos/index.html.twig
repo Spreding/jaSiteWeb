@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A Propos
+{% endblock %}
+{% block stylesheets %}
+	<link href="{{asset("assets/css/a-propos.css")}}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	<div class="div_description">
+		<div class="div_description_div_img">
+			<img src="{{asset("assets/img/profile_photo.jpg")}}" class="pp_img">
+			<p class="pp_text">Julie AMELIN</p>
+		</div>
+		<div class="div_description_div_text">
+			<span class="description_titre">MOTION DESIGNER & 3D DESIGNER</span>
+			<p class="description_text">
+				Passionée par le motion design et le graphisme 3D j'ai décidé d'en faire mon métier.
+				<br>
+				Rigoureuse et polyvalente, je serai là pour vous accompagner tout le long de vos projets en vous apportant des solutions et réponses à vos besoins.
+				<br><br>
+				Je suis toujours à la recherche de nouveux défis à relever et saurai vous satisfaire aussi bien en motion design qu'en graphisme print le tout en 2D ou en 3D.
+			</p>
+
+		</div>
+	</div>
+	<div class="div_skills">
+		<p class="div_skills_titre">COMPETENCES</p>
+		
+		<div class="div_skills_box">
+			<div class="div_skills_square motion_square">
+				<p class="div_skills_text">Je crée des vidéos en 2D comme en 3D avec un design clair et précis qui répondra à tout vos besoins</p>
+			</div>
+
+			<div class="div_skills_square print_square">
+				<p class="div_skills_text">Je vous propose de créer un visuel, une affiche créative et originale avec une possibilité de personnalisation illimitées.</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="div_clients">
+		<p class="div_clients_titre">MES CLIENTS</p>
+		<div class="div_clients_box">
+			<div class="clients_square">
+				<img class="clients_img_1" src="{{asset("assets/img/clients_xls.png")}}" alt="">
+			</div>
+			<div class="clients_square">
+				<img class="clients_img_2" src="{{asset("assets/img/clients_gulf_stream.png")}}" alt="">
+			</div>
+			<div class="clients_square">
+				<img class="clients_img_3" src="{{asset("assets/img/clients_engie.png")}}" alt="">
+			</div>
+			<div class="clients_square">
+				<img class="clients_img_4" src="{{asset("assets/img/clients_baron_papillon.png")}}" alt="">
+			</div>
+		</div>
+	</div>
+{% endblock %}
