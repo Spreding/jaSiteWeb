@@ -189,8 +189,13 @@ body {
   width: 80%;
   margin: 50px auto;
 }
-.imgProjet {
-  width: 50%;
+.sizeProjet1 {
+  width: 99%;
+  margin: 3px;
+}
+.sizeProjet2 {
+  width: 49%;
+  margin: 3px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -208,34 +213,38 @@ body {
     font-size: 15px;
   }
 
-  #size1{
+  #size1 {
     width: 100%;
   }
-  #size2{
+  #size2 {
     width: 100%;
   }
-  #size3{
+  #size3 {
     width: 100%;
   }
 
-  .logiciel_box{
+  .logiciel_box {
     width: 20%;
   }
-  .logiciel_titre{
+  .logiciel_titre {
     font-size: 15px;
   }
-  .logiciel_liste{
+  .logiciel_liste {
     font-size: 14px;
   }
-  .description_box{
+  .description_box {
     width: 75%;
   }
-  .description_text{
+  .description_text {
     font-size: 15px;
     width: 80%;
     margin: 0 auto;
   }
-  .imgProjet{
+  .sizeProjet1 {
+    width: 100%;
+    margin: 3px;
+  }
+  .sizeProjet2 {
     width: 100%;
     margin: 3px;
   }

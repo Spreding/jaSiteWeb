@@ -61,7 +61,6 @@ function OpenProjet(idProjet) {
       // console.log(data["types"]);
       var pageProjet = document.getElementById("page_projet");
       var myContainer = document.getElementById("container_projet");
-      console.log(data["images"]);
       var content = "";
       content +=
         '<div class="titre_projet_div"> <p class="nom_projet">' +
@@ -81,15 +80,15 @@ function OpenProjet(idProjet) {
       content += '<div class="img_div">';
       for (let index = 0; index < data["images"].length; index++) {
         // console.log(data["images"][index].includes("mp4"));
-        if (data["images"][index].includes("mp4")) {
+        if (data["images"][index][0].includes("mp4")) {
           content +=
-            '<video controls class="imgProjet"> <source src=' +
-            data["images"][index] +
+            '<video controls class="imgProjet sizeProjet'+data["images"][index][1]+'"> <source src=' +
+            data["images"][index][0] +
             "> </video>";
         } else {
           content +=
-            '<img class="imgProjet" src=' +
-            data["images"][index] +
+            '<img class="imgProjet sizeProjet'+ data["images"][index][1]+'" src=' +
+            data["images"][index][0] +
             ' alt=""></img>';
         }
       }

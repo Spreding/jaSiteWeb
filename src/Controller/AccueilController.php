@@ -41,7 +41,7 @@ class AccueilController extends AbstractController
         $images = $this->getDoctrine()->getRepository(Images::class)->findBy(['projet' => $id]);
         $image = [];
         for ($i = 0; $i < Count($images); $i++) {
-            $image[] = $images[$i]->getUrlImage();
+            $image[] = [$images[$i]->getUrlImage(),  $images[$i]->getSizeProjetImages()];            
         }
         $response = $projet->ToJson();
         $response['images'] = $image;
