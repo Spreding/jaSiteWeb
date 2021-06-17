@@ -61,7 +61,7 @@ function OpenProjet(idProjet) {
       // console.log(data["types"]);
       var pageProjet = document.getElementById("page_projet");
       var myContainer = document.getElementById("container_projet");
-
+      console.log(data["images"]);
       var content = "";
       content +=
         '<div class="titre_projet_div"> <p class="nom_projet">' +
