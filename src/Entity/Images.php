@@ -27,6 +27,11 @@ class Images
      */
     private $projet;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $sizeProjet;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Images
     public function setProjet(?Projet $projet): self
     {
         $this->projet = $projet;
+
+        return $this;
+    }
+
+    public function getSizeProjet(): ?string
+    {
+        return $this->sizeProjet;
+    }
+
+    public function setSizeProjet(string $sizeProjet): self
+    {
+        $this->sizeProjet = $sizeProjet;
 
         return $this;
     }
