@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Images;
 use App\Entity\Projet;
+use Doctrine\DBAL\Types\Type;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,14 +39,28 @@ class AccueilController extends AbstractController
         $test = $request->query->all();
         $id = htmlspecialchars($test['idprojet'], ENT_QUOTES, "UTF-8");
         $projet = $this->getDoctrine()->getRepository(Projet::class)->findOneBy(['id' => $id]);
-        $images = $this->getDoctrine()->getRepository(Images::class)->findBy(['projet' => $id]);
-        $image = [];
-        for ($i = 0; $i < Count($images); $i++) {
-            $image[] = [$images[$i]->getUrlImage(),  $images[$i]->getSizeProjetImages()];            
-        }
+        
+        
         $response = $projet->ToJson();
-        $response['images'] = $image;
 
         return new JsonResponse($response);
+
+        
+    }
+
+    /**
+     * @Route("/getInfoProjet/{id}", name="getInfoProjetTEST")
+     */
+    public function getInfoProjetTEST(Request $request , $id): Response
+    {
+        $projet = $this->getDoctrine()->getRepository(Projet::class)->findOneBy(['id' => $id]);
+
+
+
+        $response = $projet->ToJson();
+
+        return new JsonResponse($response);
+
+        
     }
 }

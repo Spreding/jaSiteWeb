@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProjetRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Length;
 
 /**
  * @ORM\Entity(repositoryClass=ProjetRepository::class)
@@ -191,14 +192,27 @@ class Projet
 
     public function ToJson(): array
     {
+        $images = $this->getImages();
+        $image = [];
+        $imgSizeTest = [];
+        for ($i = 0; $i < Count($images); $i++) {
+            $image[] = [$images[$i]->getUrlImage()];            
+            $imgSizeTest []=  [$images[$i]->getSizeProjetImages()];
+        }
+
+
+
         return $response = [
             'id' => $this->getId(),
             'name' => $this->getName(),
-            'type' => $this->getTypes(),
+            'type' => $this->getTypes()->getName(),
+            // 'type' => $this->getTypes()->getValues(),
             'date' => $this->getDate(),
             'logiciels' => $this->getLogiciels(),
             'description' => $this->getDescription(),
-            'images' => []
+            'images' => $image,
+            'sizeIMG' => $imgSizeTest
+            // 'images' => $this->getTypes()->getValues()
         ];
     }
 }

@@ -58,19 +58,18 @@ function OpenProjet(idProjet) {
     async: true,
 
     success: function (data, status) {
-      // console.log(data["types"]);
       var pageProjet = document.getElementById("page_projet");
       var myContainer = document.getElementById("container_projet");
       var content = "";
+      //console.log("url " + data["images"][1] + " size " + data["sizeIMG"][1]);
       content +=
-        '<div class="titre_projet_div"> <p class="nom_projet">' +
-        data["name"] +
-        '</p><img class="img_trait_1" src="assets/img/trait_1.png" alt=""><p class="type_projet">' +
-        data["types"] +
-        '</p><p class="date_projet">' +
-        data["date"] +
+        '<div class="titre_projet_div"> <p class="nom_projet">' + data["name"] +
+        '</p><p class="type_projet">' + data["type"] +
+        '</p><img class="img_trait_1" src="assets/img/trait_1.png" alt=""><p class="date_projet">' + data["date"] +
         '</p><img class="img_trait_2" src="assets/img/trait_2.png" alt=""></div>';
       var logiciels = data["logiciels"].replace(/,/g, "<br>");
+      // '</p><p class="type_projet">' + data["type"] +
+      //   
       content +=
         '<div class="description_projet_div"><div class="logiciel_box"><p class="logiciel_titre">LOGICIELS</p><p class="logiciel_liste">' +
         logiciels +
@@ -80,14 +79,15 @@ function OpenProjet(idProjet) {
       content += '<div class="img_div">';
       for (let index = 0; index < data["images"].length; index++) {
         // console.log(data["images"][index].includes("mp4"));
+        console.log(data["sizeIMG"][index][0]);
         if (data["images"][index][0].includes("mp4")) {
           content +=
-            '<video controls class="imgProjet sizeProjet'+data["images"][index][1]+'"> <source src=' +
+            '<video controls class="imgProjet sizeProjet'+data["sizeIMG"][index][0]+'"> <source src=' +
             data["images"][index][0] +
             "> </video>";
         } else {
           content +=
-            '<img class="imgProjet sizeProjet'+ data["images"][index][1]+'" src=' +
+            '<img class="imgProjet sizeProjet'+ data["sizeIMG"][index][0]+'" src=' +
             data["images"][index][0] +
             ' alt=""></img>';
         }
